@@ -36,3 +36,9 @@ def test_word_frequency_empty():
 def test_word_frequency_single_word():
     result = word_frequency("python")
     assert result == {"python": 1}
+
+
+def test_word_frequency_no_spaces_between_words():
+    result = word_frequency("le:chat")
+    expected = word_frequency("le chat")
+    assert result == expected
