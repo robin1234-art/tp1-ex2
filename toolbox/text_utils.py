@@ -5,5 +5,10 @@ def is_palindrome(s: str) -> bool:
 
 
 def word_frequency(text: str) -> dict:
-    """À implémenter : renvoie {mot: nombre d'occurrences}, insensible à la casse et à la ponctuation."""
-    raise NotImplementedError
+    """Renvoie {mot: nombre d'occurrences}, insensible à la casse et à la ponctuation."""
+    cleaned = "".join(ch for ch in text.lower() if ch.isalpha() or ch == " ")
+    words = cleaned.split()
+    freq = {}
+    for word in words:
+        freq[word] = freq.get(word, 0) + 1
+    return freq
